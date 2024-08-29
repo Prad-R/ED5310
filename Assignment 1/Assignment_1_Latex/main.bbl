@@ -1,0 +1,225 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{bartschi2014conflict}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BA}{%
+         family={B{\"a}rtschi},
+         familyi={B\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Suri},
+         familyi={S\bibinitperiod},
+         given={Subhash},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BASS1}
+    \strng{fullhash}{BASS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{265\bibrangedash 283}
+    \field{title}{Conflict-free chromatic art gallery coverage}
+    \field{volume}{68}
+    \field{journaltitle}{Algorithmica}
+    \field{year}{2014}
+  \endentry
+
+  \entry{duraisamy2022half}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=DN}{%
+         family={Duraisamy},
+         familyi={D\bibinitperiod},
+         given={Nandhana},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HHM}{%
+         family={Hillberg},
+         familyi={H\bibinitperiod},
+         given={Hannah\bibnamedelima Miller},
+         giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=JRK}{%
+         family={Jallu},
+         familyi={J\bibinitperiod},
+         given={Ramesh\bibnamedelima K},
+         giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=KE}{%
+         family={Krohn},
+         familyi={K\bibinitperiod},
+         given={Erik},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Maheshwari},
+         familyi={M\bibinitperiod},
+         given={Anil},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NSC}{%
+         family={Nandy},
+         familyi={N\bibinitperiod},
+         given={Subhas\bibnamedelima C},
+         giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pahlow},
+         familyi={P\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Schloss-Dagstuhl-Leibniz Zentrum f{\"u}r Informatik}%
+    }
+    \strng{namehash}{DN+1}
+    \strng{fullhash}{DNHHMJRKKEMANSCPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{booktitle}{42nd IARCS Annual Conference on Foundations of Software
+  Technology and Theoretical Computer Science (FSTTCS 2022)}
+    \field{title}{Half-guarding weakly-visible polygons and terrains}
+    \field{year}{2022}
+  \endentry
+
+  \entry{heffernan1993optimal}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=HPJ}{%
+         family={Heffernan},
+         familyi={H\bibinitperiod},
+         given={Paul\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HPJ1}
+    \strng{fullhash}{HPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the Ninth Annual symposium on
+  computational geometry}
+    \field{pages}{348\bibrangedash 358}
+    \field{title}{An optimal algorithm for the two-guard problem}
+    \field{year}{1993}
+  \endentry
+
+  \entry{icking1992two}{article}{}
+    \name{author}{2}{}{%
+      {{hash=IC}{%
+         family={Icking},
+         familyi={I\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=KR}{%
+         family={Klein},
+         familyi={K\bibinitperiod},
+         given={Rolf},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {World Scientific}%
+    }
+    \strng{namehash}{ICKR1}
+    \strng{fullhash}{ICKR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{number}{03}
+    \field{pages}{257\bibrangedash 285}
+    \field{title}{The two guards problem}
+    \field{volume}{2}
+    \field{journaltitle}{International Journal of Computational Geometry \&
+  Applications}
+    \field{year}{1992}
+  \endentry
+
+  \entry{lee1986computational}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LD}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={D},
+         giveni={D},
+      }}%
+      {{hash=LA}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Arthurk},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{LDLA1}
+    \strng{fullhash}{LDLA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{2}
+    \field{pages}{276\bibrangedash 282}
+    \field{title}{Computational complexity of art gallery problems}
+    \field{volume}{32}
+    \field{journaltitle}{IEEE Transactions on Information Theory}
+    \field{year}{1986}
+  \endentry
+
+  \entry{yiu2001generalized}{article}{}
+    \name{author}{1}{}{%
+      {{hash=YS}{%
+         family={Yiu},
+         familyi={Y\bibinitperiod},
+         given={SM},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{YS1}
+    \strng{fullhash}{YS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{number}{1}
+    \field{pages}{188\bibrangedash 198}
+    \field{title}{A generalized fortress problem using k-consecutive vertex
+  guards}
+    \field{volume}{72}
+    \field{journaltitle}{Journal of Geometry}
+    \field{year}{2001}
+  \endentry
+\enddatalist
+\endinput
