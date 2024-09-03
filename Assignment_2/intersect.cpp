@@ -12,9 +12,7 @@ bool IntersectProp(tPointi a, tPointi b, tPointi c, tPointi d) {
 
 }
 
-/*
-    For improper intersections, that is the second line segment originates from somewhere on the first
-*/
+// For improper intersections, that is the second line segment originates from somewhere on the first
 
 bool Between(tPointi a, tPointi b, tPointi c) {
 
@@ -23,10 +21,8 @@ bool Between(tPointi a, tPointi b, tPointi c) {
     if (!Collinear(a, b, c))
         return false;
 
-    /*
-        If ab not vertical, check betweenness on x, else y.
-    */
-
+    // If ab not vertical, check betweenness on x, else y.
+    
    if (a[X] != b[X])
         return ((a[X] <= c[X]) && (c[X] <= b[X])) || ((b[X] <= c[X]) && (c[X] <= a[X]));
    else

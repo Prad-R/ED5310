@@ -3,6 +3,8 @@
 
 #include<stdlib.h>
 #include<iostream>
+#include<string>
+#include<fstream>
 
 #define X 0
 #define Y 1
@@ -21,23 +23,33 @@ struct tVertexStructure {
     bool ear; /* TRUE if an ear */
     tVertex next, prev;
 
+    tVertexStructure() {
+        vnum = 0;
+        v[0] = 0;
+        v[1] = 0;
+        ear = false;
+        next = NULL;
+        prev = NULL;
+    }
+
 };
 
 extern tVertex vertices; /* "Head" of circular list */
+extern int n_vertices; /* Number of vertices of the polygon */
 
-/*
-    To dynamically allocate memory
-*/
+
+// To dynamically allocate memory
+
 #define NEW(p, type)\
     if ((p = (type *) malloc(sizeof(type))) == NULL) {\
         printf ("NEW : Out of memory!\n");\
         exit(EXIT_FAILURE);\
     }
 
-/*
-    To add a new item to the doubly linked list just before the "head".
-    First checks if "head" is NULL. If not it inserts, else it points p to itself in both directions
-*/
+
+// To add a new item to the doubly linked list just before the "head".
+// First checks if "head" is NULL. If not it inserts, else it points p to itself in both directions
+
 #define ADD(head, p) if (head) {\
         p -> next = head;\
         p -> prev = head -> prev;\
@@ -49,17 +61,16 @@ extern tVertex vertices; /* "Head" of circular list */
         head -> next = head -> prev = p;\
     }
 
-/*
-    To free the allocated memory and set the pointer to NULL to avoid dangling pointers.
-    The pointer is cast to char and the passed to free()
-*/
+// To free the allocated memory and set the pointer to NULL to avoid dangling pointers.
+// The pointer is cast to char and the passed to free()
+
 #define FREE(p) if (p) {free ((char *) p); p = NULL;}
 
-/*
---------------------------------------
-Function declarations
---------------------------------------
-*/
+
+// --------------------------------------
+// Function declarations
+// --------------------------------------
+
 
 int Area2(tPointi a, tPointi b, tPointi c);
 
@@ -89,8 +100,16 @@ void Triangulate(int n_vertices);
 
 void PrintDiagonal(tVertex a, tVertex b);
 
-void ReadVertices(int n_vertices);
+int FindLines(std::string filename);
 
-void PrintVertices(int n_vertices);
+void LinkVertices(tVertex* &polygon, int n_vertices);
+
+void ReadVertices(tVertex* &polygon, std::string filename);
+
+void PrintVertices(tVertex* &polygon, int n_vertices);
+
+void InitializePolygon(tVertex* &polygon, int n_vertices);
+
+void CleanUpPolygon(tVertex* &polygon, int n_vertices);
 
 #endif

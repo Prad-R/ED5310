@@ -2,6 +2,8 @@
 
 void EarInit() {
 
+    // std::cout << "In EarInit()\n";
+
     tVertex v0, v1, v2;
 
     v1 = vertices;
@@ -10,7 +12,7 @@ void EarInit() {
 
         v2 = v1 -> next;
         v0 = v1 -> prev;
-        v1 -> ear = Diagonal(v0, v1);
+        v1 -> ear = Diagonal(v0, v2);
         v1 = v1 -> next;
 
     } while(v1 != vertices);

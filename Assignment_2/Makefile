@@ -4,6 +4,9 @@ CXX := g++
 DEPFLAGS := -MP -MMD
 CXXFLAGS := $(DEPFLAGS)
 
+DEP_DIR := Dep_Files
+OBJ_DIR := Object_Files
+
 CPPFILES := $(wildcard *.cpp)
 HFILES := $(wildcard *.hpp)
 OBJECTS := $(patsubst %.cpp, %.o, $(CPPFILES))
@@ -14,6 +17,7 @@ all: $(BINARY)
 $(BINARY): $(OBJECTS)
 	@echo "Linking object files ....."
 	$(CXX) -o $@ $^
+	make move
 
 %.o: %.cpp
 	@echo "Compiling source code ....."
@@ -21,7 +25,7 @@ $(BINARY): $(OBJECTS)
 
 clean:
 	@echo "Removing all object files and dependency files ....."
-	rm -rf $(BINARY) $(DEPFILES) $(OBJECTS)
+	rm -rf $(BINARY) $(DEP_DIR)/*.d $(OBJ_DIR)/*.o
 
 -include $(DEPFILES)
 
@@ -32,3 +36,9 @@ files:
 	@echo "Header files are :" $(CPPFILES)
 	@echo "Object files are :" $(OBJECTS)
 	@echo "Dependency files are :" $(DEPFILES)
+
+# Command to move all the object and dependency files to different folders
+
+move:
+	mv *.d $(DEP_DIR)/
+	mv *.o $(OBJ_DIR)/
