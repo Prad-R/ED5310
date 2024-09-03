@@ -29,7 +29,9 @@ void CleanUpPolygon(tVertex* &polygon, int n_vertices) {
 
 int main() {
 
-    int n_vertices = FindLines("./Polygon_Generator/Test_Cases/Test_Case_5.csv");
+    const char* filename = "./Polygon_Generator/Test_Cases/Test_Case_1.csv";
+
+    int n_vertices = FindLines(filename);
 
     // Dynamically allocating memory to an array of vertices and returning a pointer to the beginning of the array
 
@@ -39,15 +41,15 @@ int main() {
 
     // Read the vertices of the polygon from a test case file
 
-    ReadVertices(polygon, "./Polygon_Generator/Test_Cases/Test_Case_5.csv");
+    ReadVertices(polygon, filename);
 
     // Initialize the head to the first vertex
 
     vertices = polygon[0];
 
-    PrintVertices(polygon, n_vertices);
+    // PrintVertices(polygon, n_vertices);
 
-    Triangulate(n_vertices);
+    Triangulate(n_vertices, filename);
 
     CleanUpPolygon(polygon, n_vertices);
 

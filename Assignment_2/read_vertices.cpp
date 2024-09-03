@@ -4,9 +4,9 @@ tVertex vertices = NULL;
 
 // Function to find the number of lines in the file
 
-int FindLines(std::string filename) {
+int FindLines(const char* filename) {
 
-    std::ifstream file("./Polygon_Generator/Test_Cases/Test_Case_5.csv");
+    std::ifstream file(filename);
 
     if (!file.is_open()) { 
         std::cerr << "Error opening the file!" << std::endl; 
@@ -42,9 +42,9 @@ void LinkVertices(tVertex* &polygon, int n_vertices) {
 
 }
 
-void ReadVertices(tVertex* &polygon, std::string filename){
+void ReadVertices(tVertex* &polygon, const char* filename){
 
-    std::ifstream file("./Polygon_Generator/Test_Cases/Test_Case_5.csv");
+    std::ifstream file(filename);
 
     if (!file.is_open()) { 
         std::cerr << "Error opening the file!" << std::endl; 

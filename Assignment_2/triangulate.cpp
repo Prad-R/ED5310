@@ -1,13 +1,13 @@
 #include "triangulation.hpp"
 
-void Triangulate(int n_vertices){
+void Triangulate(int n_vertices, const char* filename){
 
     // std::cout << "In Triangulate()\n";
 
     tVertex v0, v1, v2, v3, v4;
     int n = n_vertices;
 
-    EarInit();
+    EarInit();   
 
     while(n > 3) {
 
@@ -25,7 +25,8 @@ void Triangulate(int n_vertices){
                v1 = v2 -> prev;
                v0 = v1 -> prev;
 
-               PrintDiagonal(v1, v3);
+               // PrintDiagonal(v1, v3);
+               WriteDiagonal(v1, v3, filename);
 
                // Update the ear status of vertices adjacent to the ear
             
@@ -48,6 +49,6 @@ void Triangulate(int n_vertices){
 
     }
 
-    std::cout << "\n..... Triangulation Complete! .....\n";
+    // std::cout << "\n..... Triangulation Complete! .....\n";
 
 }

@@ -96,15 +96,17 @@ bool Diagonal(tVertex a, tVertex b);
 
 void EarInit();
 
-void Triangulate(int n_vertices);
+void Triangulate(int n_vertices, const char* filename);
 
 void PrintDiagonal(tVertex a, tVertex b);
 
-int FindLines(std::string filename);
+void WriteDiagonal(tVertex a, tVertex b, const char* filename);
+
+int FindLines(const char* filename);
 
 void LinkVertices(tVertex* &polygon, int n_vertices);
 
-void ReadVertices(tVertex* &polygon, std::string filename);
+void ReadVertices(tVertex* &polygon, const char* filename);
 
 void PrintVertices(tVertex* &polygon, int n_vertices);
 
