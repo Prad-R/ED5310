@@ -32,12 +32,12 @@ def generate_concave_polygon(num_points, min_coord=0, max_coord=10):
     return concave_polygon
 
 # Set this to how many ever test cases have already been generated. Useful to index the test case files
-prev_cases = 5
+prev_cases = 1
 
-for i in range(5):
+for i in range(1):
 
     # For generating test case polygons
-    concave_polygon = generate_concave_polygon(100, 0, 100)
+    concave_polygon = generate_concave_polygon(20, 0, 500)
     print("Generated Concave Polygon Vertices:", concave_polygon)
 
     # Plot the polygon, verify visually and answer the prompt to add to test cases
