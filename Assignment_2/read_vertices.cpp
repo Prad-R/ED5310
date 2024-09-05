@@ -4,9 +4,11 @@ tVertex vertices = NULL;
 
 // Function to find the number of lines in the file
 
-int FindLines(const char* filename) {
+int FindLines(std::string filename) {
 
-    std::ifstream file(filename);
+    // std::cout << "In FindLines()\n";
+
+    std::ifstream file(filename.c_str());
 
     if (!file.is_open()) { 
         std::cerr << "Error opening the file!" << std::endl; 
@@ -27,6 +29,8 @@ int FindLines(const char* filename) {
 
 void LinkVertices(tVertex* &polygon, int n_vertices) {
 
+    // std::cout << "In LinkVertices()\n";
+
     for (int i = 1; i < n_vertices - 1; i ++) {
 
         polygon[i] -> next = polygon[i + 1];
@@ -42,9 +46,11 @@ void LinkVertices(tVertex* &polygon, int n_vertices) {
 
 }
 
-void ReadVertices(tVertex* &polygon, const char* filename){
+void ReadVertices(tVertex* &polygon, std::string filename){
 
-    std::ifstream file(filename);
+    // std::cout << "In ReadVertices()\n";
+
+    std::ifstream file(filename.c_str());
 
     if (!file.is_open()) { 
         std::cerr << "Error opening the file!" << std::endl; 

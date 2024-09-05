@@ -5,6 +5,8 @@
 
 void InitializePolygon(tVertex* &polygon, int n_vertices) {
 
+    // std::cout << "In InitializePolygon()\n";
+
     for (int i = 0; i < n_vertices; i ++) {
 
         polygon[i] = new tsVertex();
@@ -19,9 +21,15 @@ void InitializePolygon(tVertex* &polygon, int n_vertices) {
 
 void CleanUpPolygon(tVertex* &polygon, int n_vertices) {
 
+    // std::cout << "In CleanUpPolygon()\n";
+
     for (int i = 0; i < n_vertices; i ++) {
 
         delete polygon[i];
+
+        // To erase nullify the dangling pointer created due to the pointer pointing to the deleted memory adress
+
+        polygon[i] = NULL;
 
     }
 
@@ -29,33 +37,54 @@ void CleanUpPolygon(tVertex* &polygon, int n_vertices) {
 
 int main() {
 
-    const char* filename = "./Polygon_Generator/Test_Cases/Test_Case_1.csv";
+    std::string filename;
 
-    int n_vertices = FindLines(filename);
+    std::stringstream ss;
 
-    // Dynamically allocating memory to an array of vertices and returning a pointer to the beginning of the array
+    int test_cases = 15;
 
-    tVertex* polygon = new tVertex[n_vertices];
+    for (int i = 0; i < test_cases; i ++) {
 
-    InitializePolygon(polygon, n_vertices);
+        ss.str("");
+        ss.clear();
 
-    // Read the vertices of the polygon from a test case file
+        ss << "./Polygon_Generator/Test_Cases/Test_Case_" << i + 1 << ".csv";
 
-    ReadVertices(polygon, filename);
+        filename = ss.str();
 
-    // Initialize the head to the first vertex
+        // std::cout << i << " " << filename << std::endl;
 
-    vertices = polygon[0];
+        int n_vertices = FindLines(filename);
 
-    // PrintVertices(polygon, n_vertices);
+        // Dynamically allocating memory to an array of vertices and returning a pointer to the beginning of the array
 
-    Triangulate(n_vertices, filename);
+        tVertex* polygon = new tVertex[n_vertices];
 
-    CleanUpPolygon(polygon, n_vertices);
+        InitializePolygon(polygon, n_vertices);
 
-    // Deleting the dynamically allocated memory
+        // Read the vertices of the polygon from a test case file
 
-    delete[] polygon;
+        ReadVertices(polygon, filename);
+
+        // Initialize the head to the first vertex
+
+        vertices = polygon[0];
+
+        // PrintVertices(polygon, n_vertices);
+
+        Triangulate(n_vertices, filename);
+
+        CleanUpPolygon(polygon, n_vertices);
+
+        // Deleting the dynamically allocated memory
+
+        delete[] polygon;
+
+        polygon = NULL;
+
+        // std::cout << "Deleted poylgon\n";
+
+    }
 
     return 0;
 

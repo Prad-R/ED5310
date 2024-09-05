@@ -6,9 +6,9 @@ void PrintDiagonal(tVertex a, tVertex b) {
 
 }
 
-void WriteDiagonal(tVertex a, tVertex b, const char* filename) {
+void WriteDiagonal(tVertex a, tVertex b, std::string filename) {
 
-    std::ofstream file(filename, std::ios::out|std::ios::app);
+    std::ofstream file(filename.c_str(), std::ios::out|std::ios::app);
 
     if (!file.is_open()) { 
         std::cerr << "Error opening the file!" << std::endl; 

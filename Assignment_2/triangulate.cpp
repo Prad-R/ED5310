@@ -1,6 +1,6 @@
 #include "triangulation.hpp"
 
-void Triangulate(int n_vertices, const char* filename){
+void Triangulate(int n_vertices, std::string filename){
 
     // std::cout << "In Triangulate()\n";
 

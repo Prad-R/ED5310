@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<sstream>
 
 #define X 0
 #define Y 1
@@ -96,17 +97,17 @@ bool Diagonal(tVertex a, tVertex b);
 
 void EarInit();
 
-void Triangulate(int n_vertices, const char* filename);
+void Triangulate(int n_vertices, std::string filename);
 
 void PrintDiagonal(tVertex a, tVertex b);
 
-void WriteDiagonal(tVertex a, tVertex b, const char* filename);
+void WriteDiagonal(tVertex a, tVertex b, std::string filename);
 
-int FindLines(const char* filename);
+int FindLines(std::string filename);
 
 void LinkVertices(tVertex* &polygon, int n_vertices);
 
-void ReadVertices(tVertex* &polygon, const char* filename);
+void ReadVertices(tVertex* &polygon, std::string filename);
 
 void PrintVertices(tVertex* &polygon, int n_vertices);
 
