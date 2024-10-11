@@ -2,6 +2,8 @@
 
 void Clean_Up() {
 
+    // std::cout << "In Clean_Up()\n";
+
     Clean_Edges();
     Clean_Faces();
     Clean_Vertices();
@@ -9,6 +11,8 @@ void Clean_Up() {
 }
 
 void Clean_Faces() {
+
+    // std::cout << "In Clean_Faces()\n";
 
     Face f;
     Face temp; // Temporary pointer for deleting
@@ -39,6 +43,8 @@ void Clean_Faces() {
 }
 
 void Clean_Edges() {
+
+    // std::cout << "In Clean_Edges()\n";
 
     Edge e; // Primary index into edge list
     Edge temp; // Temporary edge pointer
@@ -96,6 +102,8 @@ void Clean_Edges() {
 
 void Clean_Vertices() {
 
+    // std::cout << "In Clean_Vertices()\n";
+
     Edge e;
     Vertex v, temp;
 
@@ -111,12 +119,16 @@ void Clean_Vertices() {
 
     // Deleting all vertices that have been processed but are not on the hull
 
+    // Write_Vertices();
+
     while(vertices && vertices -> mark && !vertices -> onhull) {
 
         v = vertices;
         DELETE(vertices, v);
 
     }
+
+    // Write_Vertices();
 
     v = vertices -> next;
 

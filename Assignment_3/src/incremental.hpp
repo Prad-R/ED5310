@@ -3,7 +3,9 @@
 
 #include<stdlib.h>
 #include<iostream>
+#include<cmath>
 #include<string>
+#include<random>
 #include<fstream>
 #include<sstream>
 
@@ -73,6 +75,7 @@ extern int n_vertices; // Number of points in the input
 // ------------------------
 
 #define EXIT_FAILURE 1
+char* malloc();
 
 #define NEW(p, type) \
     if ((p = (type*) malloc (sizeof(type))) == NULL) { \
@@ -122,10 +125,12 @@ extern int n_vertices; // Number of points in the input
     }
 
 #define SWAP(t, x, y) \
+    { \
     t = x; \
     x = y; \
     y = t; \
-
+    }
+    
 // ------------------------
 // Function Declarations
 // ------------------------
@@ -136,7 +141,23 @@ Edge Make_Null_Edge();
 
 Face Make_Null_Face();
 
-int Volum_Sign(Face f, Vertex p);
+void Create_Points(int n_points);
+
+void Read_Vertices();
+
+void Read_Vertices_Cube();
+
+void Double_Triangle();
+
+bool Collinear(Vertex a, Vertex b, Vertex c);
+
+Face Make_Face(Vertex v0, Vertex v1, Vertex v2, Face fold);
+
+void Construct_Hull();
+
+bool Add_One(Vertex p);
+
+int Volume_Sign(Face f, Vertex p);
 
 Face Make_Cone_Face(Edge e, Vertex p);
 
@@ -149,5 +170,29 @@ void Clean_Edges();
 void Clean_Faces();
 
 void Clean_Vertices();
+
+void Write_Vertices();
+
+void Write_Edges();
+
+void Write_Faces();
+
+void Inspect_Vertex(Vertex v);
+
+void Inspect_Edge(Edge e);
+
+void Inspect_Face(Face f);
+
+void Processed_Status();
+
+void Locate_Vertex_Head();
+
+void Locate_Edge_Head();
+
+void Locate_Face_Head();
+
+void Write_STL();
+
+float* Find_Normal(int a[3], int b[3], int c[3]);
 
 #endif

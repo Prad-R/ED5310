@@ -2,6 +2,10 @@
 
 int Volume_Sign(Face f, Vertex p) {
 
+    // std::cout << "In Volume_Sign()\n";
+    // Inspect_Face(f);
+    // Inspect_Vertex(p);
+
     double vol;
     double ax, ay, az, bx, by, bz, cx, cy, cz;
 
@@ -21,7 +25,9 @@ int Volume_Sign(Face f, Vertex p) {
 
     // The expansion of the volume determinant
     
-    vol = ax * (by * cz - bz * cy) + ay * (bz * cx - bx * cz) + ax * (bx * cy - by * cx);
+    vol = ax * (by * cz - bz * cy) + ay * (bz * cx - bx * cz) + az * (bx * cy - by * cx);
+
+    // std::cout << "The volume is " << vol << "\n";
 
     if (vol > 0.5)
         return 1;
@@ -29,4 +35,5 @@ int Volume_Sign(Face f, Vertex p) {
         return -1;
     else
         return 0;
+        
 }

@@ -4,7 +4,9 @@ Vertex vertices = NULL;
 Edge edges = NULL;
 Face faces = NULL;
 
-Vertex Make_Null_Vertex () {
+Vertex Make_Null_Vertex() {
+
+    // std::cout << "In Make_Null_Vertex()\n";
 
     Vertex v;
 
@@ -22,6 +24,8 @@ Vertex Make_Null_Vertex () {
 
 Edge Make_Null_Edge() {
 
+    // std::cout << "In Make_Null_Edge()\n";
+
     Edge e;
 
     NEW(e, sEdge);
@@ -38,11 +42,13 @@ Edge Make_Null_Edge() {
 
 Face Make_Null_Face() {
 
+    // std::cout << "In Make_Null_Face()\n";
+
     Face f;
 
     NEW(f, sFace);
 
-    for (int i = 0; i < 3; i ++) {
+    for (int i = 0; i < 3; ++ i) {
 
         f -> edge[i] = NULL;
         f -> vertex[i] = NULL;
